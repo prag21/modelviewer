@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+  <div class="navbar">
+  <div class="title">
+   <h1>3D MODELS</h1>
+  </div>
+  </div>
+  
+  </div>
+  {% if error %}
+<div id="error">
+  <h4>{{error}}</h4>
+</div>
+{% endif %}
+  <div class="grid">
+    {% for a in all_img %}
+    <a href="about/{{a.id}}"><div class="box">
+      <h2>Product ID: {{a.id}}</h2>
+    </div></a>
+    {% endfor %}
+  </div>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="File" name='image'>
+    <input type="submit" value="Upload" class="submit">
+  </form>
+ 
+</body>
+<script>
+  var m=document.getElementById("error");
+  setTimeout(function(){
+    m.style.display="none";
+  },3000);
+</script>
+</html>
