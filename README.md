@@ -5,9 +5,13 @@ A simple website which displays the list of 3d models available and once you cli
 Technologies used:
 
 ->Frontend:HTML,CSS,Javascript
+
 ->Backend:PostgreSQL
+
 ->Django:High-level Python Web Framework
+
 ->@google/model-viewer:To view 3d models
+
 ->Heroku:Platform used for deployment
 
 
